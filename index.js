@@ -13,12 +13,21 @@ const hidefile = require('hidefile');
 const cors = require('cors');
 const drivelist = require('drivelist');
 
+const movieDB = require('./db/movieDB');
+
 var app = express();
 var dir = os.homedir();//process.cwd();
 
 app.use(express.static(dir)); //cur working dir
 app.use(express.static(__dirname)); //module dir
 app.use(cors());
+
+app.get('/movies', function (req,res){
+  movieDB.test(function(err,success){
+    res.json(success);
+  });
+});
+
 
 app.get('/', function ( req, res, next ) {
   // uri has a forward slash followed any number of any characters except full stops (up until the end of the string)
@@ -110,7 +119,10 @@ app.get('/files', function (req,res){
 });
 
 
+
 var server = http.createServer(app);
 
+console.log('started...');
 server.listen('8081','0.0.0.0');
+
 
