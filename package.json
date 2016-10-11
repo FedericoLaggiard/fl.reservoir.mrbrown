@@ -1,0 +1,22 @@
+{
+  "name": "fl.reservoir.mr-brown",
+  "version": "0.0.1",
+  "description": "Movies file system manager",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": "6.2.2"
+  },
+  "author": "Federico Laggiard",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "2.8.1",
+    "drivelist": "3.3.4",
+    "express": "4.14.0",
+    "hidefile": "1.1.0",
+    "junk": "2.0.0",
+    "underscore": "1.8.3"
+  }
+}
